@@ -6,10 +6,10 @@ const TableComponent = ({ items, selected }) => {
   };
   return (
     <div className="w-25">
-      <table className="table table-striped table-hover table-info ">
+      <table className="table table-striped table-hover table-light ">
         <thead>
           <tr>
-            <th scope="col">Orden</th>
+            <th className="text-center">Orden</th>
           </tr>
         </thead>
 
@@ -17,7 +17,11 @@ const TableComponent = ({ items, selected }) => {
           {items !== undefined &&
             items.map((item) => {
               return (
-                <tr key={item.id} onClick={() => selectId(item.id)}>
+                <tr
+                  className="text-center"
+                  key={item.id}
+                  onClick={() => selectId(item.id)}
+                >
                   <td>{item.name}</td>
                 </tr>
               );
@@ -33,12 +37,12 @@ export default TableComponent;
 export const TableItems = ({ orderFiltered, toggle }) => {
   // console.log("orders", orderFiltered);
   return (
-    <div className="w-100 ">
+    <div className="w-75 ">
       <div className="d-flex justify-content-between align-items-center ">
         <div>
           Numero de orden: <b> {orderFiltered.name}</b>
         </div>
-        <div className="d-flex justify-content-end right-0">
+        <div className="d-flex justify-content-end right-0 mb-2">
           <button className="btn btn-primary" onClick={toggle}>
             Agregar producto
           </button>
@@ -46,7 +50,7 @@ export const TableItems = ({ orderFiltered, toggle }) => {
       </div>
       <table className="table table-striped table-hover table-info ">
         <thead>
-          <tr>
+          <tr className="text-center">
             <th scope="col">SKU</th>
             <th scope="col">Nombre</th>
             <th scope="col">Cantidad</th>
@@ -59,10 +63,10 @@ export const TableItems = ({ orderFiltered, toggle }) => {
             orderFiltered.items.map((item) => {
               return (
                 <tr key={item.id}>
-                  <td>{item.sku}</td>
+                  <td className="text-center">{item.sku}</td>
                   <td>{item.name}</td>
-                  <td>{item.quantity}</td>
-                  <td>{item.price}</td>
+                  <td className="text-center">{item.quantity}</td>
+                  <td className="text-center">{item.price}</td>
                 </tr>
               );
             })}
