@@ -6,7 +6,7 @@ const TableComponent = ({ items, selected }) => {
   };
   return (
     <div className="w-25">
-      <table className="table table-striped table-hover table-light ">
+      <table className="table table-striped table-hover table-info ">
         <thead>
           <tr>
             <th className="text-center">Orden</th>
